@@ -1,5 +1,6 @@
-pkgs: supplyPackagesGetCommandsAndPorts:
-supplyPackagesGetCommandsAndPorts [ pkgs.netcat-gnu pkgs.screen ]
+pkgs: takesPackagesGivesCommandsAndPorts:
+takesPackagesGivesCommandsAndPorts
+  [ pkgs.netcat-gnu pkgs.screen ]
   (commandsAndPorts:
     builtins.concatStringsSep "\n" (
       map ({name, command, port ? null, sgr}: ''
